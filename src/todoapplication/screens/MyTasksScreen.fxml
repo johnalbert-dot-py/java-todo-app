@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1136.0" type="BorderPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="todoapplication.controllers.MyTasksController">
+   <left>
+      <VBox fx:id="leftPanel" spacing="15.0" styleClass="left-panel" stylesheets="@../styles/home.css" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Todo Application" textAlignment="CENTER" wrappingWidth="166.482421875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button id="pending-task-btn" fx:id="pendingTaskBtn" alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#changePage" prefHeight="50.0" prefWidth="166.0" stylesheets="@../styles/home.css" text="My Tasks" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="page-btn" />
+                  <String fx:value="page-active" />
+               </styleClass>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button id="completed-task-btn" fx:id="completedTaskBtn" alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#changePage" prefHeight="50.0" prefWidth="166.0" styleClass="page-btn" stylesheets="@../styles/home.css" text="Completed Tasks" textAlignment="CENTER" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button id="logout-btn" alignment="BASELINE_LEFT" defaultButton="true" mnemonicParsing="false" onAction="#changePage" prefHeight="50.0" prefWidth="166.0" stylesheets="@../styles/home.css" text="Logout" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="page-btn" />
+               </styleClass>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <ScrollPane id="rightPanelContainer" fx:id="rightPanelContainer" fitToHeight="true" fitToWidth="true" style="-fx-background-color: #15151C;" BorderPane.alignment="TOP_CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <content>
+            <VBox fx:id="rightPanel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="718.0" prefWidth="927.0" spacing="10.0" styleClass="right-panel" stylesheets="@../styles/home.css">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="My Tasks">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="25.0" />
+                     </VBox.margin>
+                  </Text>
+                  <VBox id="toDoItemLists" fx:id="toDoItemLists" prefHeight="477.0" prefWidth="747.0" spacing="15.0" style="-fx-background-color: none;">
+                     <children>
+                        <Button id="addNewTaskBtn" fx:id="addNewTaskBtn" mnemonicParsing="false" onAction="#addNewTask" stylesheets="@../styles/home.css" text="Add New Task">
+                           <styleClass>
+                              <String fx:value="page-btn" />
+                              <String fx:value="add-btn" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <DatePicker editable="false" promptText="Select Due Date" showWeekNumbers="true" visible="false" />
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="90.0" right="90.0" top="30.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</fx:root>
