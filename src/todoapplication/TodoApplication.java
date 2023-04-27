@@ -22,7 +22,7 @@ public class TodoApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         // Login Page
-        FXMLLoader loginPage = new FXMLLoader(getClass().getResource("screens/LoginScreen.fxml"));
+        FXMLLoader loginPage = new FXMLLoader(getClass().getResource("./screens/LoginScreen.fxml"));
         loginPage.setRoot(new BorderPane());
         Parent loginRoot = loginPage.load();
         Scene loginScene = new Scene(loginRoot);
